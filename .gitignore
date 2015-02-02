@@ -4,11 +4,15 @@
 *.log
 *.toc
 *.ist
+*.fls
+*.fdb_latexmk
+*.nlo
 *.acn
 *.acr
 *.alg
 *.bbl
 *.blg
+*.brf
 *.dvi
 *.glg
 *.gls
@@ -16,8 +20,10 @@
 *.ind
 *.lof
 *.lot
+*.lb
 *.maf
 *.mtc
 *.mtc1
 *.out
 *.synctex.gz
+.DS_Store
