@@ -1,0 +1,41 @@
+\section{Software Traceability}\label{lit-traceability}
+
+\subsection{Software Traceability Introduction and History}\label{lit-traceability-introduction}
+
+Traceability in general terms is the ability or potential to track the semantics of links and relationships between components within a system \citep{asuncion2007end} or to ``relate data that is stored within artefacts of some kind, along with the ability to examine this relationship'' \citep{cleland2012software}. With relation to software, traceability most commonly refers to \textit{requirements traceability} (section \ref{lit-traceability-requirements}) in which high-level software requirements are linked to designs, and ultimately, the implementation of a software system e.g. linking manifestations of specific requirements through the complete project life cycle \citep{edwards1991methodology,asuncion2007end}.
+
+Traceability was initially recognised as an important factor in software engineering at the 1968 NATO conference which sought to address the ``software crisis'' which had become apparent, with the majority of projects failing to deliver in part or completely. \cite{naur1969software} analysed successful projects to find common traits and gave praise for projects in which ``the system that they are designing contains explicit traces of the design process'', e.g. there were clear links between levels of the system. By the mid-1970s traceability was listed by \cite{boehm1976quantitative} as a topic of interest in software engineering to ensure quality. In the 1980s traceability was established as a requirement for a growing number of national and international standards, often mandated by large organisations such as the United States Department of Defence \citep{dorfman1990standards}. Through the 1990s and 2000s numerous research projects and publications investigated problems with traditional \citep{ramesh1993issues,gotel1994analysis} and automated \citep{laurent2007towards} or model-driven \citep{galvao2007survey} approaches. In the current climate although in some cases traceability can become overburdening to projects providing little if any benefit \citep{asuncion2007end} the general focus and belief is that traceability can deliver significant benefits when used correctly both in terms of requirement delivery, software comprehension and maintenance impact analysis \citep{cleland2012software,spanoudakis2005software}.
+
+\subsubsection{Direction of Traceability}\label{lit-traceability-types}
+
+As stated traceability is the potential to map or link relationships between components \citep{asuncion2007end} and it has long been recognised that this mapping and linking can be focused or arranged in different directions \citep{ieee1983srs}.
+
+\textbf{Forward traceability} is the ability to identify sub-requirements or components from higher-level documentation.
+
+\textbf{Backwards traceability} concerns linking more specific requirements or components with their higher-level source (or parent).
+
+\textbf{Dependency traceability} is the linking of related and inter-dependent components, outside of a requirement tree, where one component depends on functionality within another.
+
+\citep{ieee1983srs,gotel1994analysis,asuncion2007end,cleland2012software}
+
+One option to facilitate multiple directions of traceability (at least forward and backward between requirements and sub-requirements) is the use of a hierarchical numbering system, for example where \textit{1} represents a high-level requirement and \textit{1.1}, \textit{1.2} etc are sub-requirements of \textit{1} \citep{ieee1983srs}.
+
+\subsection{Requirements Traceability}\label{lit-traceability-requirements}
+
+Requirements traceability can be an important factor to support and assist various systems development processes such as analysis, change management, reuse and testing. It also allows for clearer acceptance by end-users showing clear links between the requirements and what has been delivered \citep{spanoudakis2005software}. Specifically ``requirements traceability refers to the ability to describe and follow the life of a requirement, in both a forwards and backwards direction, i.e. from its origin through to its development and specification to its subsequent deployment and use, and through all periods of ongoing refinement and iteration in any of these phases'' \citep{gotel1994analysis}; tracking the semantics of links between requirements and system components at each level of the system \citep{harrington1993investigation}.
+
+Requirements traceability aids development in a number of different ways, making clear links between requirements and lower-level steps such as designs, code and testing. At a later stage it can inform change planning and management, allowing for easier impact analysis, code verification and feature identification - tracing all these back up even to initial requirements \citep{cleland2012software}.
+
+According to \citet{ieee1983srs} software requirements specifications, either user-generated or formed during a requirements analysis, direct the fundamental deliverables and form of the system. They are a common factor of many software development projects and when used well can be beneficial in a number of ways:
+\begin{itemize}
+\item Providing a basis for agreement between developers and users on exactly what and how the system will perform
+\item Aid development reducing potential for omissions and re-development
+\item Act as a guide for costing
+\item Be used as the basis for testing and verification
+\item Enable easier transfer between developers or users
+\item Serve as a base design for future enhancement
+\end{itemize}
+\citep{ieee1983srs}
+\newline
+
+Traceability further serves development of these requirements by keeping and maintaining clear links between requirements and components within the system \citep{cleland2012software}. A well formed software requirement specification allows for traceability if ``the origin of each of its requirements is clear and if it facilitates the referencing of each requirement in future development or enhancement documentation'' \citep{ieee1983srs}.

@@ -1,0 +1,102 @@
+\documentclass[oneside,12pt]{CUEDthesisPSnPDF}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{url}
+\usepackage{natbib}
+%\usepackage[a4paper,left=30mm,right=30mm, top=30mm,bottom=30mm]{geometry}
+%\usepackage{pdflscape}
+%\usepackage{lscape}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+%\usepackage{algorithmicx}
+%\usepackage{pdfcomment}
+\usepackage{comment}
+\usepackage[footnote,final,silent,marginclue]{fixme}
+
+% load algorithm packages after hyperref (they apprently patch up hyperref?)
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+
+
+%\usepackage{graphicx}
+%\usepackage{multirow}
+%\usepackage{floatrow}
+\usepackage{url}
+\usepackage{longtable}
+
+\usepackage{listings}
+\lstset{language=java}
+\lstset{basicstyle=\ttfamily}
+
+
+\pagestyle{headings}
+%\doublespacing
+
+\title{Simulating Cardinal Movements of Human Labour Using Finite Elements}
+
+
+\author{Zelimkhan Gerikhanov}
+\collegeordept{School of Computing Sciences}
+\university{University of East Anglia}
+% insert below the file name that contains the crest in-place of 'UnivShield'
+\crest{\includegraphics[width=50mm]{uealogo.png}}
+\degree{Upgrade Report}
+\degreedate{January 2015}
+
+\onehalfspacing
+%\makeatother
+
+\renewcommand\bibname{References}
+\renewcommand\refname{References}
+
+\begin{document}
+
+\maketitle
+
+\listoffixmes
+\pagenumbering{roman}
+\tableofcontents
+\listoffigures
+\listoftables
+
+%\chapter*{Acknowledgements}
+
+\chapter*{Statement of Originality}
+
+%\begin{abstract}
+%\end{abstract}
+\clearpage
+\pagenumbering{arabic}
+
+\chapter{Introduction}\label{chap-introduction}
+\include{sections/introduction}
+
+\chapter{Literature Review}\label{chap-literature}
+\include{sections/literature/introduction/introduction}
+
+\chapter{Methodology}\label{chap-methodology}
+\include{sections/methodology/overview/overview}
+
+\chapter{Future Work}\label{chap-future}
+\include{sections/future/future}
+
+\chapter{Proposed Thesis Structure}\label{chap-thesis}
+\include{sections/proposedstructure}
+
+\bibliographystyle{apalike}
+%\bibliography{../literature/lit}
+\bibliography{childbirth_sim}
+%\addcontentsline{toc}{chapter}{References}
+
+\chapter{Appendices}
+
+\include{sections/appendix/screenshots}
+
+\end{document}
