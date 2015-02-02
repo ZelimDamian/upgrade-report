@@ -1,11 +1,47 @@
-Computer based simulations find numerous applications in medicine. Such applications include training of medical personell, diagnosing patients based on digital data and scientific research to gain better understanding of physiological phenomena. One of the most challenging applications of computer based simulation in medicine is bio-mechanical simuations. The underlying principles are very complex and thus require sophisticated theoretical formulations and considerable software development efforts.
+\section{Background}\label{intro-background}
+
+Computer based simulations find numerous applications in medicine. Such applications include training of medical personell, diagnosing patients based on digital data and scientific research to gain better understanding of physiological phenomena. Bio-mechanical simuations are one of the most challenging uses of computer based simulation in medicine. The underlying principles are very complex and thus require sophisticated theoretical formulations and considerable software development efforts.
+
+One of the areas where bio-mechanical simulations are very important is obstetrics related medical simulations.
+
+The main focus of this project is creating a realistic real-time computer based simuation of human childbirth. Simulations of this kind require modeling biomechanical interactions of high complexity. As mentioned, this implyies highly sophisticated. This report will therefore attempt to cover the important aspects of human childbirth.
+
+\section{Human labour}
+\subsection{Cardinal movements}
 
 
+
+\subsection{Problematic labour}
+
+\subsection{Childbirth simulators}
+There are a number of mechanical childbirth simulators that exist already. Such simualtors are designed to allow tranee obstetricians and midwifes to interact with a maniquin of a birthing woman. The maniquin is normally made of plastic and/or metal. The section
+
+The motivation behind using a computer based simulation in childbirth modeling is dictated by a number of reasons. While having certain advantages the mechanical childbirth simulators often lack very important features. Primarily, mechanical maniquin will typically be very poorly customizable. Such simulator is typically used for training juniour personnel and in many of training cases the simulation scenario is required to be changed based on the type of the case that is being practiced. Using mechanical simulator means that only a specific scenario is available for training with only slight variations. Additional maniquins of a different type will have to be acquired to perform training for alternative scenarios. Contrary to this, computer based simulations allow unrestricted customizability. It is also worth mentioning, that there exsits a hybrid type of simulators, that combine a computer based underlying bio-mechanical model with an external mechanical maniquin to provide the interface between the trainee and the simulator. Such, simualtors combine the advantages of both types of simulators, but also carry the drawbacks of at least one of them.
 
 Computer simulations provide a good tool for representing real world phenomena, but they are only capable of representing the simulated objects to a certain degree of approximation. Better approximations are predominantly much more expensive in terms of computational power. With the increased processing power of modern computers, it is possible to perform simuations with a higher degree of fidelity. However, even the most performant machines can struggle with certain types of high-cost simulations. In such cases, we have to utilize the underlying hardware to the highest degree possible. This can be achieved by a number optimization techniques. One of the most effective techniques is using parallel processing in order to speed up the computation.
 
-It is desired to achieve the highest fidelity of the simulaitons with the as little latency as possible. Therefore, performance optimizations and GPGPU utilization for Finite Element Analysis is one of the main focuses of this thesis. Several available application programming interfaces (API's) will be overviewed as the candidates for the implementation. It is then shown how the chosen API is used to achieve highly efficient implementation of FEA for soft-tissue simulation.
+\section{Reverse vs Forward engineered approaches}
+
+There is a number mong the existing mechanical and computer based simulators of human childbirth. It is crucially important to contrast the approach chosen for this research project from the existing reverse-engineered simulations.
+
+\section{Finite element method in surgical simulations}
+
+Finite element method (FEM) is
+
+It is desired to achieve the highest fidelity of the simulaitons with as little latency as possible. To this end, performance optimizations and GPU utilization for Finite Element Analysis is one of the main focuses of this thesis. Several available application programming interfaces (API's) will be overviewed as the candidate tools for implementation. It is then shown how the chosen API is used to achieve highly efficient implementation of FEA for soft-tissue simulation.
 
 Another important aspect of creating a computer based simulation of childbirth is acquiring realistic 3D models of the underlying physiological structures. Namely, the fetal body and maternal lower body geometries are required. The possible ways of constructing the required meshes will be covered in this thesis. The approach is not yet decided on.
 
-The remainder of this report is arranged as follows. In chapter \ref{chap-literature} a literature review is conducted  presenting the body of already existing relevant research. Chapter \ref{chap-methodology} narrates the .(a paper covering work performed in benchmarking reverse engineering is also included in Appendix \ref{redbm-paper}, with details of the benchmark process and tooling in Appendix \ref{work-benchmark-process-app}). Future work is identified in chapter \ref{chap-future} including a work plan and Gantt chart. Finally chapter \ref{chap-thesis} presents a proposed thesis structure for the final write-up.
+\section{Report overview}
+
+The organization of the remainder of this report is presented here.
+
+In chapter \ref{chap-literature} a literature review is conducted  presenting the body of already existing relevant research. The review is split based on relevance to a particular aspect of this research project.
+
+Chapter \ref{chap-methodology} describes the work that has already been undertaken as of the date of this report.
+
+Three publications have been successfully made in the duration of this PhD course, each of which covered an important topic related to the area of interest of this research. All three papers will be covered in this report. The papers are include in the \ref{appendix}.
+
+There is a considerable amount of work still left to complete. The \ref{chap-future} chapter focuses on describing the required steps aimed at achieving the objectives of this research project. An approximate work plan is also presented in this chapter featuring a Gannt chart.
+
+Finally chapter \ref{chap-thesis} presents a proposed thesis structure for the final write-up.

@@ -3,16 +3,20 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: zelim_gerikhanov.aux
 A level-1 auxiliary file: sections/introduction.aux
 A level-1 auxiliary file: sections/literature/introduction/introduction.aux
-A level-1 auxiliary file: sections/methodology/overview/overview.aux
+A level-1 auxiliary file: sections/methodology/overview.aux
+A level-1 auxiliary file: sections/methodology/basic.aux
+A level-1 auxiliary file: sections/methodology/software.aux
+A level-1 auxiliary file: sections/methodology/fea.aux
+A level-1 auxiliary file: sections/methodology/gpu.aux
 A level-1 auxiliary file: sections/future/future.aux
 A level-1 auxiliary file: sections/proposedstructure.aux
 The style file: apalike.bst
 A level-1 auxiliary file: sections/appendix/screenshots.aux
-I found no \citation commands---while reading file zelim_gerikhanov.aux
 Database file #1: childbirth_sim.bib
+Warning--I didn't find a database entry for "parente2014"
 You've used 0 entries,
             1935 wiz_defined-function locations,
-            477 strings with 3903 characters,
+            482 strings with 4024 characters,
 and the built_in function-call counts, 17 in all, are:
 = -- 0
 > -- 0
@@ -51,4 +55,4 @@ warning$ -- 0
 while$ -- 0
 width$ -- 0
 write$ -- 2
-(There was 1 error message)
+(There was 1 warning)
