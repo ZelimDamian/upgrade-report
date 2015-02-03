@@ -1,0 +1,14 @@
+\chapter{Mechanical Contact}\label{methodology-contact}
+
+\section{Basic mechanical contact model}
+
+\section{FE based mechanical contact}
+  \subsection{General principles}
+
+  Explicit FEA techniques allow access to the forces resulting from the deformations of the finite element mesh. The forces are then used to update the deformations \textit{U} with an appropriate time integration technique. This feature results in a useful way to apply external force loads to the mesh, but also provides a way to extract force information at a particular contact point.
+
+  The developed TLED framework can be represented as pipeline represented on Figure \ref{figure} !!!. Note that forces node occurs twise in the framework. The first occurrence of the node is useful to apply external nodes. By the time the exuction reaches the second \"force\" node the buffer of forces is updated with the contributions from the deformed elements. The simulation module responsible for mechanical contact interaction can access the force data to perform contact calculations.
+
+  \subsection{Sphere with Cube interactive simulation}
+
+  A simple scene was created as an initial testing setup for the TLED finite element simulation.

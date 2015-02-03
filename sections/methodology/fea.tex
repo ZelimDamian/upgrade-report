@@ -1,1 +1,21 @@
-\section{Finite Element Method based childbrith simulation}\label{methodology-overview}
+\section{Finite Element Method soft Tissue Simulation}\label{methodology-fea}
+
+\subsection{FEA concepts}
+
+\subsection{Total lagrangian explicit dynamic FE}
+
+\subsection{CPU based implementation}
+
+  \subsubsection{Traditional FEA simulation}
+
+  Traditionally FE analyses are performed on a particular setup with fixed parameters. Time frame is one the most important aspects of the simulation. To perform an analysis a starting time and a finishing time are normally chosen and the simulation is commenced. The natural and essential external loads are varied throughout the timeframe according to well defined laws and functions.
+
+  The developed BrithView TLED simulation system is capable of performing this type of a simulation. The dedicated component class called \textit{FixedTimeSimulationComponent} can be used to perform a fixed-time simulation.
+
+  The advantage of such type of simulations is apparent when a highly controlled analysis environment is required. When testing the stability and strength of mechanical structures such simulations allow greater control and repeatability of the analyses.
+
+  However, there are cases when the analysis is required to flow continuously throughout the simulation. For such cases we have developed an alternative simulation framework described in section \ref{methodology-fea-interactive}.
+
+  \subsubsection{Interactive real-time simulation}\label{methodology-fea-interactive}
+
+  In contrast to the previously described type of FE simulation, an interactive simulation is not limited to a fixed timeframe.

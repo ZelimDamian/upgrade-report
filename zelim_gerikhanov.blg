@@ -1,8 +1,9 @@
 This is BibTeX, Version 0.99d (TeX Live 2014)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: zelim_gerikhanov.aux
-A level-1 auxiliary file: sections/introduction.aux
+A level-1 auxiliary file: sections/introduction/introduction.aux
 A level-1 auxiliary file: sections/literature/introduction/introduction.aux
+A level-1 auxiliary file: sections/literature/existing.aux
 A level-1 auxiliary file: sections/methodology/overview.aux
 A level-1 auxiliary file: sections/methodology/basic.aux
 A level-1 auxiliary file: sections/methodology/software.aux
@@ -13,46 +14,56 @@ A level-1 auxiliary file: sections/proposedstructure.aux
 The style file: apalike.bst
 A level-1 auxiliary file: sections/appendix/screenshots.aux
 Database file #1: childbirth_sim.bib
+Warning--I didn't find a database entry for "DIAMETERS"
+Warning--I didn't find a database entry for "GABBE91"
+Warning--I didn't find a database entry for "NORMALLABOUR"
+Warning--I didn't find a database entry for "RIGIDBODY"
+Warning--I didn't find a database entry for "coulomb00"
+Warning--I didn't find a database entry for "boneFrictionCoefficient"
+Warning--I didn't find a database entry for "skinFrictionInVivo"
+Warning--I didn't find a database entry for "realTimeSkinFriction"
+Warning--I didn't find a database entry for "Pal2001"
+Warning--I didn't find a database entry for "Moreau"
 Warning--I didn't find a database entry for "parente2014"
-You've used 0 entries,
+You've used 1 entry,
             1935 wiz_defined-function locations,
-            482 strings with 4024 characters,
-and the built_in function-call counts, 17 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 7
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+            508 strings with 4501 characters,
+and the built_in function-call counts, 478 in all, are:
+= -- 44
+> -- 18
+< -- 1
++ -- 6
+- -- 6
+* -- 34
+:= -- 81
+add.period$ -- 3
+call.type$ -- 1
+change.case$ -- 8
+chr.to.int$ -- 1
+cite$ -- 1
+duplicate$ -- 23
+empty$ -- 37
+format.name$ -- 7
+if$ -- 101
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+missing$ -- 1
+newline$ -- 8
+num.names$ -- 3
+pop$ -- 12
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 8
 quote$ -- 0
-skip$ -- 1
+skip$ -- 16
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 24
+swap$ -- 6
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
+type$ -- 6
 warning$ -- 0
-while$ -- 0
+while$ -- 4
 width$ -- 0
-write$ -- 2
-(There was 1 warning)
+write$ -- 15
+(There were 11 warnings)
