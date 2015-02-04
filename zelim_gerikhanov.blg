@@ -24,46 +24,48 @@ Warning--I didn't find a database entry for "skinFrictionInVivo"
 Warning--I didn't find a database entry for "realTimeSkinFriction"
 Warning--I didn't find a database entry for "Pal2001"
 Warning--I didn't find a database entry for "Moreau"
+Warning--I didn't find a database entry for "mono_framework"
+Warning--I didn't find a database entry for "opentk"
 Warning--I didn't find a database entry for "parente2014"
-You've used 1 entry,
+You've used 2 entries,
             1935 wiz_defined-function locations,
-            508 strings with 4501 characters,
-and the built_in function-call counts, 478 in all, are:
-= -- 44
-> -- 18
+            516 strings with 4698 characters,
+and the built_in function-call counts, 850 in all, are:
+= -- 76
+> -- 41
 < -- 1
-+ -- 6
-- -- 6
-* -- 34
-:= -- 81
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 8
-chr.to.int$ -- 1
-cite$ -- 1
-duplicate$ -- 23
-empty$ -- 37
-format.name$ -- 7
-if$ -- 101
++ -- 14
+- -- 14
+* -- 65
+:= -- 150
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 16
+chr.to.int$ -- 2
+cite$ -- 2
+duplicate$ -- 37
+empty$ -- 60
+format.name$ -- 16
+if$ -- 171
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 1
-newline$ -- 8
-num.names$ -- 3
-pop$ -- 12
+missing$ -- 3
+newline$ -- 13
+num.names$ -- 6
+pop$ -- 24
 preamble$ -- 1
-purify$ -- 8
+purify$ -- 17
 quote$ -- 0
-skip$ -- 16
+skip$ -- 25
 stack$ -- 0
-substring$ -- 24
-swap$ -- 6
+substring$ -- 36
+swap$ -- 7
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 6
+type$ -- 10
 warning$ -- 0
-while$ -- 4
+while$ -- 6
 width$ -- 0
-write$ -- 15
-(There were 11 warnings)
+write$ -- 27
+(There were 13 warnings)

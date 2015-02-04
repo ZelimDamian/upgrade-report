@@ -32,3 +32,36 @@ doi={10.1109/EHB.2013.6707394},}
  isbn = {0596007124},
  publisher = {O' Reilly \& Associates, Inc.},
 }
+
+@article{Johnsen2014,
+abstract = {PURPOSE: NiftySim, an open-source finite element toolkit, has been designed to allow incorporation of high-performance soft tissue simulation capabilities into biomedical applications. The toolkit provides the option of execution on fast graphics processing unit (GPU) hardware, numerous constitutive models and solid-element options, membrane and shell elements, and contact modelling facilities, in a simple to use library.
+
+METHODS: The toolkit is founded on the total Lagrangian explicit dynamics (TLEDs) algorithm, which has been shown to be efficient and accurate for simulation of soft tissues. The base code is written in C[Formula: see text], and GPU execution is achieved using the nVidia CUDA framework. In most cases, interaction with the underlying solvers can be achieved through a single Simulator class, which may be embedded directly in third-party applications such as, surgical guidance systems. Advanced capabilities such as contact modelling and nonlinear constitutive models are also provided, as are more experimental technologies like reduced order modelling. A consistent description of the underlying solution algorithm, its implementation with a focus on GPU execution, and examples of the toolkit's usage in biomedical applications are provided.
+
+RESULTS: Efficient mapping of the TLED algorithm to parallel hardware results in very high computational performance, far exceeding that available in commercial packages.
+
+CONCLUSION: The NiftySim toolkit provides high-performance soft tissue simulation capabilities using GPU technology for biomechanical simulation research applications in medical image computing, surgical simulation, and surgical guidance applications.},
+author = {Johnsen, Stian F and Taylor, Zeike A and Clarkson, Matthew J and Hipwell, John and Modat, Marc and Eiben, Bjoern and Han, Lianghao and Hu, Yipeng and Mertzanidou, Thomy and Hawkes, David J and Ourselin, Sebastien},
+doi = {10.1007/s11548-014-1118-5},
+issn = {1861-6429},
+journal = {International journal of computer assisted radiology and surgery},
+month = sep,
+pmid = {25241111},
+title = {{NiftySim: A GPU-based nonlinear finite element package for simulation of soft tissue biomechanics.}},
+url = {http://www.ncbi.nlm.nih.gov/pubmed/25241111},
+year = {2014}
+}
+
+@article{Miller2007,
+abstract = {We propose an efficient numerical algorithm for computing deformations of ‘very’ soft tissues (such as the brain, liver, kidney etc.), with applications to real-time surgical simulation. The algorithm is based on the finite element method using the total Lagrangian formulation, where stresses and strains are measured with respect to the original configuration. This choice allows for pre-computing of most spatial derivatives before the commencement of the time-stepping procedure. We used explicit time integration that eliminated the need for iterative equation solving during the time-stepping procedure. The algorithm is capable of handling both geometric and material non-linearities. The total Lagrangian explicit dynamics (TLED) algorithm using eight-noded hexahedral under-integrated elements requires approximately 35\% fewer floating-point operations per element, per time step than the updated Lagrangian explicit algorithm using the same elements. Stability analysis of the algorithm suggests that due to much lower stiffness of very soft tissues than that of typical engineering materials, integration time steps a few orders of magnitude larger than what is typically used in engineering simulations are possible. Numerical examples confirm the accuracy and efficiency of the proposed TLED algorithm. Copyright © 2006 John Wiley \& Sons, Ltd.},
+author = {Miller, Karol and Joldes, Grand and Lance, Dane and Wittek, Adam},
+doi = {10.1002/cnm.887},
+isbn = {1099-0887},
+issn = {10698299},
+journal = {Communications in Numerical Methods in Engineering},
+keywords = {Explicit time integration,Finite element method,Soft tissues,Surgical simulation,Total Lagrangian formulation},
+pages = {121--134},
+title = {{Total Lagrangian explicit dynamics finite element algorithm for computing soft tissue deformation}},
+volume = {23},
+year = {2007}
+}

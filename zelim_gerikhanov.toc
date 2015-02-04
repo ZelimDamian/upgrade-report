@@ -20,48 +20,50 @@
 \contentsline {subsection}{\numberline {3.2.1}Physics based simulation}{13}{subsection.3.2.1}
 \contentsline {subsubsection}{Simplified physics models}{13}{section*.8}
 \contentsline {subsubsection}{Simplifying assumptions}{13}{section*.9}
-\contentsline {subsection}{\numberline {3.2.2}Basic contact model}{15}{subsection.3.2.2}
-\contentsline {subsubsection}{Friction}{15}{section*.12}
+\contentsline {subsection}{\numberline {3.2.2}Basic contact model}{14}{subsection.3.2.2}
+\contentsline {subsubsection}{Friction}{14}{section*.12}
 \contentsline {subsubsection}{Rotational moments}{16}{section*.14}
-\contentsline {subsection}{\numberline {3.2.3}IveTrainer childbirth simulation software}{18}{subsection.3.2.3}
-\contentsline {subsubsection}{Overview}{18}{section*.16}
-\contentsline {subsubsection}{Features}{19}{section*.18}
-\contentsline {paragraph}{Object Manipulation}{19}{section*.19}
+\contentsline {subsection}{\numberline {3.2.3}IveTrainer childbirth simulation software}{17}{subsection.3.2.3}
+\contentsline {subsubsection}{Overview}{17}{section*.16}
+\contentsline {subsubsection}{Features}{18}{section*.18}
+\contentsline {paragraph}{Object Manipulation}{18}{section*.19}
 \contentsline {paragraph}{Cardinal Movements of Fetal Head}{19}{section*.20}
 \contentsline {paragraph}{Customisable Models}{19}{section*.21}
-\contentsline {paragraph}{Periodically changing expulsion force}{20}{section*.22}
+\contentsline {paragraph}{Periodically changing expulsion force}{19}{section*.22}
 \contentsline {paragraph}{Control over physical quantities}{20}{section*.23}
 \contentsline {paragraph}{Imposed trajectory management}{20}{section*.24}
-\contentsline {paragraph}{Hybrid Simulation}{21}{section*.25}
-\contentsline {paragraph}{Shoulder Dystocia Visualisation}{21}{section*.26}
+\contentsline {paragraph}{Hybrid Simulation}{20}{section*.25}
+\contentsline {paragraph}{Shoulder Dystocia Visualisation}{20}{section*.26}
 \contentsline {paragraph}{Face Presentation}{21}{section*.27}
 \contentsline {paragraph}{Manipulating Articulated Fetus}{21}{section*.28}
-\contentsline {subsection}{\numberline {3.2.4}Simulation pipeline}{22}{subsection.3.2.4}
-\contentsline {subsubsection}{Full Fetal Body Simulation}{24}{section*.30}
-\contentsline {subsubsection}{Results and Conclusions}{25}{section*.33}
-\contentsline {section}{\numberline {3.3}Simulation System Engineering}{27}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Requirements}{27}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}BirthEngine with .NET/Mono}{27}{subsection.3.3.2}
-\contentsline {subsubsection}{Crossplatform runtime}{27}{section*.34}
-\contentsline {section}{\numberline {3.4}Finite Element Method soft Tissue Simulation}{28}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}FEA concepts}{28}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Total lagrangian explicit dynamic FE}{28}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}CPU based implementation}{28}{subsection.3.4.3}
-\contentsline {subsubsection}{Traditional FEA simulation}{28}{section*.35}
-\contentsline {subsubsection}{Interactive real-time simulation}{28}{section*.36}
-\contentsline {section}{\numberline {3.5}Parallel FEA Simulations Using GPU }{29}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}General purpose computation with GPU's}{29}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}C++AMP, OpenCL and CUDA}{29}{subsection.3.5.2}
-\contentsline {subsection}{\numberline {3.5.3}TLED using OpenCL}{29}{subsection.3.5.3}
-\contentsline {subsubsection}{Changes to the algorithm}{29}{section*.37}
-\contentsline {subsubsection}{Efficient memory utilization}{29}{section*.38}
-\contentsline {subsubsection}{Data-race problem}{29}{section*.39}
-\contentsline {chapter}{\numberline {4}Future Work}{30}{chapter.4}
-\contentsline {section}{\numberline {4.1}Experiments}{31}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Bony structures with a basic pelvic floor model}{31}{subsection.4.1.1}
-\contentsline {section}{\numberline {4.2}Volumetric mesh generation}{31}{section.4.2}
-\contentsline {section}{\numberline {4.3}Improved contact model}{31}{section.4.3}
-\contentsline {chapter}{\numberline {5}Proposed Thesis Structure}{32}{chapter.5}
-\contentsline {chapter}{Bibliography}{34}{chapter*.40}
-\contentsline {chapter}{\numberline {6}Appendices}{35}{chapter.6}
-\contentsline {section}{\numberline {6.1}BirthView application screenshots}{36}{section.6.1}
+\contentsline {subsection}{\numberline {3.2.4}Simulation pipeline}{21}{subsection.3.2.4}
+\contentsline {subsubsection}{Full Fetal Body Simulation}{23}{section*.30}
+\contentsline {subsubsection}{Results and Conclusions}{24}{section*.33}
+\contentsline {section}{\numberline {3.3}Simulation System Engineering}{26}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Requirements}{26}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}BirthEngine with .NET/Mono}{26}{subsection.3.3.2}
+\contentsline {subsubsection}{Crossplatform runtime}{26}{section*.34}
+\contentsline {subsubsection}{Rendering capabilities}{26}{section*.35}
+\contentsline {subsubsection}{Entity Component System}{27}{section*.36}
+\contentsline {section}{\numberline {3.4}Finite Element Method soft Tissue Simulation}{29}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}FEA concepts}{29}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Total lagrangian explicit dynamic FE}{29}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}CPU based implementation}{29}{subsection.3.4.3}
+\contentsline {subsubsection}{Traditional FEA simulation}{29}{section*.38}
+\contentsline {subsubsection}{Interactive real-time simulation}{29}{section*.39}
+\contentsline {section}{\numberline {3.5}Parallel FEA Simulations Using GPU }{30}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}General purpose computation with GPU's}{30}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}C++AMP, OpenCL and CUDA}{30}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}TLED using OpenCL}{30}{subsection.3.5.3}
+\contentsline {subsubsection}{Changes to the algorithm}{30}{section*.40}
+\contentsline {subsubsection}{Efficient memory utilization}{30}{section*.41}
+\contentsline {subsubsection}{Data-race problem}{30}{section*.42}
+\contentsline {chapter}{\numberline {4}Future Work}{31}{chapter.4}
+\contentsline {section}{\numberline {4.1}Experiments}{32}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Bony structures with a basic pelvic floor model}{32}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2}Volumetric mesh generation}{32}{section.4.2}
+\contentsline {section}{\numberline {4.3}Improved contact model}{32}{section.4.3}
+\contentsline {chapter}{\numberline {5}Proposed Thesis Structure}{33}{chapter.5}
+\contentsline {chapter}{Bibliography}{35}{chapter*.43}
+\contentsline {chapter}{\numberline {6}Appendices}{36}{chapter.6}
+\contentsline {section}{\numberline {6.1}BirthView application screenshots}{37}{section.6.1}

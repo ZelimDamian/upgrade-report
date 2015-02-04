@@ -19,7 +19,7 @@ The .NET framework for the first iteration of reimplementing the simulation soft
 
 \subsubsection{Rendering capabilities}
 
-  Simulation systems often lack the appealing rendering capability of the more graphics oriented applications, such as games. However, we believe that having a realistic graphical representation of the simulation environment carries a great role in emmrsiveness of the scene, which in turn affects how effective the training is. Therefore, a considerable attention is given the graphical engine of the simulations sytem.
+  Simulation systems often lack the appealing rendering capability of the more graphics oriented applications, such as games. However, we believe that having a realistic graphical representation of the simulation environment carries a great role in immersiveness of the scene, which in turn affects how effective the training is. Therefore, a considerable attention is given the graphical engine of the simulations sytem.
 
   OpenTK \citep{opentk} is an open-source toolkit that wraps around a number of low level API's. It provides access to the OpenGL, OpenAL and OpenCL API's of the target platform. OpenTK was used in developing the graphical component of the simulation system.
 
@@ -40,4 +40,13 @@ The .NET framework for the first iteration of reimplementing the simulation soft
 
 Entity component system (ECS) is a popular framework primarily used in high-performance oriented graphical applications development, particulary in game development. The framework is an example of a broader approach to software engineering known as \textit{Composition Over Inheritance}. The approach is a well known design pattern and can be found in the book \citep{Freeman:2004:HFD:1076324}.
 
-ECS is chosen as the core 
+ECS is chosen as the core approach to describing the simulation elements and their behaviours. The main idea is that each simulation object is represented by an \textit{entity}. Note that all scene elements are entities directly and not through inheritance.
+
+The class diagram in Figure \ref{software-ecs} provides an example of how ECS is used to represent a part of a simulation scene. The object
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=100mm]{sections/methodology/images/software/software-ecs.png}
+\caption[Entity component system use in BirthEngine.]{\label{software-ecs} Entity component system use in BirthEngine.}
+\end{center}
+\end{figure}

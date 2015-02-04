@@ -290,6 +290,11 @@ INPUT ./sections/methodology/images/basic/mass-spring-detail.png
 OUTPUT sections/methodology/software.aux
 INPUT sections/methodology/software.tex
 INPUT sections/methodology/software.tex
+INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
+INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
+INPUT sections/methodology/images/software/software-ecs.png
+INPUT ./sections/methodology/images/software/software-ecs.png
+INPUT ./sections/methodology/images/software/software-ecs.png
 OUTPUT sections/methodology/fea.aux
 INPUT sections/methodology/fea.tex
 INPUT sections/methodology/fea.tex

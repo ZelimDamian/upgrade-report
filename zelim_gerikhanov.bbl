@@ -1,5 +1,10 @@
 \begin{thebibliography}{}
 
+\bibitem[Freeman et~al., 2004]{Freeman:2004:HFD:1076324}
+Freeman, E., Freeman, E., Bates, B., and Sierra, K. (2004).
+\newblock {\em Head First Design Patterns}.
+\newblock O' Reilly \& Associates, Inc.
+
 \bibitem[Gerikhanov et~al., 2013]{gerikhanov2013}
 Gerikhanov, Z., Audinis, V., and Lapeer, R. (2013).
 \newblock Towards a forward engineered simulation of the cardinal movements of
