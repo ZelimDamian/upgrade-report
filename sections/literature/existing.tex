@@ -1,1 +1,56 @@
 \section{Existing childbirth simulation systems}\label{lit-existing}
+
+\subsection{Mechanical contact problem}
+The earlier work in the area of computer based childbirth simulations is done by \textbf{\citet{GEIGER}}. In his paper he investigates techniques for building meshes of models based on the Delaunay triangulation approach. The mesh is built from raw MRI data and proves to be sufficiently effective for medical purposes. After the work concerned with building the meshes he shows an attempt of implementing a childbirth simulation. The simulation is based on the compliance principle. The principle is concerned with optimizing the rotation and orientation of the colliding fetal head so that the contact forces are minimized. The contact forces, in turn, are calculated based on a \emph{surrogate} force, which is based on the depth of the penetration of the contact.
+
+\textbf{Discussion:} The author claims that the simulation represents realistic movements of the head. However, as supported by \citet{RUDYPHD}, the results seem rather unreliable in terms of fidelity. The fact that arbitrary movement and rotation is applied without proper consideration of contact forces renders the simulation unreliable. The simulation may result in an infinite loop of optimizations, so that the head will continue oscillating. Another important point is that if the `loop-hole' is not entered this approach will always render the delivery possible. This includes even severe cases of fetal head and maternal pelvis (cephalo-pelvic) disproportion.
+
+\textbf{\citet{Wischnik}} proposes another FEA based approach to the problem. He performs FEA on the whole body of the fetus and takes into consideration the soft tissues involved in the process.
+
+\textbf{Discussion:} The simulation accounts for the whole fetal body and the maternal lower-body. The author claims having a realistic model, however, the paper fails to present reliable validation of the results \citep{RUDYPHD}.
+
+\subsection{Existing physics based simulations}
+
+A number of obstetrics training simulators have been produced over the past decades. They vary in their quality and implementation. By quality we understand fidelity of the simulation presented. The implementation differs in terms of tools used: the first type includes purely software-based simulations and the second includes software simulations that are used in conjunction with real mechanical apparatus.
+
+The work by \textbf{\citet{RUDY2001}} presents a mechanical model for fetal head moulding. This phenomenon occurs during labour and is essentially fetal head deformation due to labour forces. In another work, \citet{RUDY2004} present a system developed to provide forceps delivery simulation with augmented reality (AR). They use tracking markers on the forceps to capture input and simulate accordingly. Live video is then combined with rendering of the fetal model to compose an AR simulation. In the consequent paper on the same topic they present a mechanical contact model based on FEA to calculate the effect of the contact forces between the forceps and the skull.
+
+\textbf{Discussion:} In both works they present realistic models of the fetal head and its interaction with the forceps. The use of augmented reality brings additional attractiveness to the simulation, as it has more usability in training applications. Moreover, they have managed to solve the double-contact problem, which requires more complex calculations for the FEA.
+The problem with the simulation is that it fails to achieve real-time refresh rates. However, in the latter work they propose potential solutions to the problem, such as implementing simplified FEA techniques and reducing the model complexity.
+
+Another childbirth simulation using haptic feedback is performed by \textbf{\citet{KheddarImposedTraj}}. As already mentioned the system uses imposed trajectories of the fetal decent, but the interaction of the fetus with the pelvic floor is performed based on a physical model. They use a system coupled with a general purpose haptic device to allow the user to interact with the simulated process.
+
+\textbf{Discussion:} The virtual hand presents an interest as a mean to provide an immersive simulation. However, the system in total is limited to simple interactions with the fetus during the descent and also calculating the forces occurring between the pelvic floor and the fetus.
+%
+% \begin{figure}
+%   \centering
+%     \includegraphics[width=110mm]{otherSimWithHand.PNG}
+%   \caption{\label{handSimFig} Simulation system by \citet{KheddarImposedTraj}}
+% \end{figure}
+
+Many childbirth simulators \citep{Moreau}, \citep{BUTTIN}, which use a mechanical component, use the BirthSIM system \citep{BIRTHSIM}. The BirthSIM system allows having realistic haptic feedback using a mechanical part resembling a parturient woman with a mechanically articulated fetus. The trainees are able to interact with the mechanical model and observe the relevant information on the screen of a connected computer.
+
+Work by \textbf{\citet{Moreau}} uses the BirthSIM system, which allows trainee obstetricians to practice forceps delivery. The software component of the system allows them to observe the process from inside representing the positioning of the forceps relative to the fetus inside the birth canal.
+
+\textbf{Discussion:} The simulation system presented in the work provides a suitable solution for forceps delivery simulation purposes. However, the work is more concerned with the labour (uterine) pressures involved in the process. Minimal attention is given to the interaction of the fetal head with the maternal organs.
+
+\textbf{\citet{BUTTIN}} present more interesting work where they have managed to model fetal descent during labour without a predefined pathway. They based the model on physical properties of the main bodies in contact with the fetus and the fetus itself. They use FEA for simulating mechanics of the process and couple it with the BirthSIM system.
+
+
+\textbf{Discussion:} The model presented considers the complex interactions of several important organs, which happen to be in contact with the fetus during labour. Additionally, it presents a realistic uterine contraction force model. It is also capable of simulating the whole process of childbirth continuously and performs FEA based computations of underlying physics. This is a major advantage, which, however, introduces a set of trade-offs. The drawback is the complexity of the computations, which require the system to use simplified representations of the organs and the fetus (Fig \ref{buttinFig}). Moreover, the bony structures of the bodies are extensively simplified, such that two ellipsoid objects represent the fetal skeleton. In the paper authors do not mention that their simulation shows the cardinal movements. Therefore, it is fair to assume that their approach does not accomplish the task of simulating them.
+
+% \begin{figure}
+%   \centering
+%     \includegraphics[width=75mm]{simplBIOMECH.PNG}
+%   \caption{\label{buttinFig} Simplified biomechanical model from \citep{BUTTIN}}
+% \end{figure}
+
+%%%% ADD discusstion about PARENTE's work
+
+\section{Conclusion}
+
+The main mechanisms of labour, also called the cardinal movements, were shown in this section. Along with the normal process, the section described the problematic cases of labour.
+
+Some of the recent developments in the area of childbirth simulation were presented. It can be concluded that there are promising developments in the field, but more work is required to achieve the high levels of fidelity and comprehensiveness. In particular, none of the reviewed forwards engineered simulations, with the exception of rather unstable simulation of \citet{GEIGER}, managed to show cardinal movements.
+
+The work by \citet{BUTTIN} presents one of the leading developments in childbirth simulation. However, some of the problems with the work are identified. The most important finding is that such a sophisticated system, but without proper consideration of the bony structures, fails to represent the cardinal movements. It can be argued that this fact supports the proposed idea of the compliance of the bony structures.

@@ -6,15 +6,64 @@
 
   Total lagrangian explicit dynamic (TLED) is a variation on the Lagrangian methods to finite element formulations. It is intially proposed in \cite{Miller2007} as a means for computer based finite element analysis. The alternative approach is known as the Updated lagrangian explicit dynamic approach is based on using the previously calculated configuration of the deformed body in order to calculate the stresses occuring in the finite elements. In contast to this technique TLED uses the original reference configuration to perform the calculations. TLED has the advantage of allowing precomputations of a large chunk of data as compared to the approach using the updated lagrangian.
 
-  \subsubsection{NiftySim TLED FEM software}
+  TLED is a very efficient explicit FEA algorithm that is very useful in surgical simulations. The details of the algorithm and the derivation of the formulation are presented in paper \cite{Miller2007}
 
-  \citet{Johnsen2014}
+\paragraph{Discussion} The TLED scheme provides very accurate and efficient simulations for soft-tissue simulation. However, as the authors name it, it is more suitable for simulating ``very soft'' tissues. In cases when the stiffness of the material is higher the minimal time-stem decreases exponentially leading to dramatically decreased simulaiton rates.
+
+This makes it impossible to use the approach for simulating bony structures present in childbirth. The fetal head and maternal pelvis deformations cannot be performed using TLED approach. Additionally, it is possible that certain tissues in the pelvic floor may have suffciently high Young's moduli making it impractical to simulate them using TLED.
+
+\subsubsection{Basic algorithm} \label{fea-algorithm}
+
+The algorithm can be divided into 3 distinct steps:
+
+\begin{enumerate}
+
+  \item Precomputation
+  \item Initialization
+  \item Time stepping
+
+\end{enumerate}
+
+Note how the precomputation step is a separate entry which allows excluding the computational effort from the main update loop. The reason why the values can be precomputed becomes clear when the notation used in \cite{bathe:1996} is applied. The $0$ on left size of the symbols indicate that the value is for the initial reference configuration which stay constant throughout the simulation.
+
+Here we provide a more detailed break-down of the steps:
+
+\begin{enumerate}
+
+  \item Preprocessing
+
+  \begin{enumerate}
+
+    \item Read the input file and load the mesh along with other assembly information (constraints, external loads, etc).
+    \item For each element of the mesh compute the following quantities
+
+    \begin{itemize}
+
+      \item Jacobian determinant det(\textbf{J})
+      \item Spatial derivatives of the shape functions $\partial{\textbf{h}}$
+      \item Strain-displacement matrices $_{0}^{t}\textrm{\textbf{B}}_{L0}$
+    \end{itemize}
+
+    \item Compute the diagonalized (lumped) mass matrix $^{0}M$
+
+  \end{enumerate}
+
+  \item Initialization
+  \begin{itemize}
+    \item The nodal displacements $^{0}\textbf{u} = \textbf{0}$
+  \end{itemize}
+
+\end{enumerate}
+
+
+
+  \cite{Johnsen2014}
 
 \subsection{CPU based implementation}
 
   \subsubsection{Traditional FEA simulation}
 
-  Traditionally FE analyses are performed on a particular setup with fixed parameters. Time frame is one the most important aspects of the simulation. To perform an analysis a starting time and a finishing time are normally chosen and the simulation is commenced. The natural and essential external loads are varied throughout the timeframe according to well defined laws and functions.
+  Traditionally FE analyses are performed on a particular setup with fixed parameters. Time frame is one the most important aspects of the simulation. To perform an analysis a starting time and a finishing time are normally chosen and the simulation is commenced. The natural and essential external loads are varied throughout the timeframe according to well defined laws and functions. This kind of simulations are done in the modern FEM packages like Dassault Systems Abaqus or Siemens
 
   The developed BrithView TLED simulation system is capable of performing this type of a simulation. The dedicated component class called \textit{FixedTimeSimulationComponent} can be used to perform a fixed-time simulation.
 
@@ -24,4 +73,6 @@
 
   \subsubsection{Interactive real-time simulation}\label{methodology-fea-interactive}
 
-  In contrast to the previously described type of FE simulation, an interactive simulation is not limited to a fixed timeframe.
+  The typical scenario of a training session will involve user input. Due to the lack of control over what the input is, various aspects of the simulation remain completely unpredictable. User input can be erroneous and unexpected, especially in the case of a novice trainee. The non-interactivity makes the traditional simulations unusable in cases of real-time training sessions.
+
+  In contrast to the previously described type of FE simulation, an interactive simulation is not limited to a fixed timeframe. The simulation is run continuously throughout the training session and the  input from the user is continuously transformed into external loads acting on the assembly.

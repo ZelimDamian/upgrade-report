@@ -256,6 +256,7 @@ INPUT sections/literature/introduction/introduction.tex
 OUTPUT sections/literature/existing.aux
 INPUT sections/literature/existing.tex
 INPUT sections/literature/existing.tex
+INPUT /usr/local/texlive/2014/texmf-dist/fonts/tfm/jknappen/ec/ecti1200.tfm
 OUTPUT sections/methodology/overview.aux
 INPUT sections/methodology/overview.tex
 INPUT sections/methodology/overview.tex
@@ -268,7 +269,6 @@ INPUT ./sections/methodology/images/basic/ao-point.png
 INPUT sections/methodology/images/basic/contact.png
 INPUT ./sections/methodology/images/basic/contact.png
 INPUT ./sections/methodology/images/basic/contact.png
-INPUT /usr/local/texlive/2014/texmf-dist/fonts/tfm/jknappen/ec/ecti1200.tfm
 INPUT sections/methodology/images/basic/friction.png
 INPUT ./sections/methodology/images/basic/friction.png
 INPUT ./sections/methodology/images/basic/friction.png
@@ -301,6 +301,9 @@ INPUT sections/methodology/fea.tex
 OUTPUT sections/methodology/gpu.aux
 INPUT sections/methodology/gpu.tex
 INPUT sections/methodology/gpu.tex
+INPUT sections/methodology/images/gpu/data-race.png
+INPUT ./sections/methodology/images/gpu/data-race.png
+INPUT ./sections/methodology/images/gpu/data-race.png
 OUTPUT sections/future/future.aux
 INPUT sections/future/future.tex
 INPUT sections/future/future.tex
@@ -347,6 +350,7 @@ INPUT ./zelim_gerikhanov.brf
 INPUT /usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc
 INPUT /usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+INPUT /usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
 INPUT /usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb

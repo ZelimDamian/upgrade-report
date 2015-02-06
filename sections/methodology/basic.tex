@@ -31,96 +31,6 @@
 
   The assumtions allowed for a simpler set of requirements for the software implementation aspect of the project and arriving at a working prototype soon.
 
-\subsection{Basic contact model}
-
-The contact model used in our childbirth simulation system is described in terms of calculating the crucial physical entities. The entities are: friction between the fetal head and the pevlis, forces and rotational moments arising from the contact. The Figure \ref{contact} describes the model in more detail.
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=100mm]{sections/methodology/images/basic/contact.png}
-\caption[A contact between two objects.]{\label{contact} A contact between two objects: \emph{P} -- pivot point, \emph{C} -- contact point,  \emph{F} –- external (uterine) force, \emph{R} –- reaction (contact) force, $F_\tau$ –- tangential component, $F_n$ –- normal component, \emph{n} -– contact normal, $\tau$ -– tangent plane, \emph{d} - radius vector, $F_{fr}$ -- friction force, $F_{c}$ -- contact force, $M$ -- the resulting rotation moment.}
-\end{center}
-\end{figure}
-
-% \subsubsection{Expulsion force}
-% In our case \emph{mg} can be replaced by the uterine contractions force \emph{F}. The contact with normal \emph{n} occurs at point \emph{C}. It has been argued by \citet{Moreau} that a periodically changing contraction force is important in simulation child-birth. Though the source did not attempt to simulate the mechanisms of labour as they proposed their model for an obstetrician training device with haptic force feedback. However, the argument appears to be sound and therefore should be considered.
-%
-% The discussed model describes the pulsating force as very realistic and presents a graph showing the force magnitude. It can be seen that just like in real labour the force not only periodically changes, but also shows delays between contractions (Fig \ref{periodicalDelayFig}). At this stage we assume that the expulsion force model does not necessarily require the delay. Therefore, the force is calculated based on a simplified sinusoidal function (Fig \ref{periodicalForceFig}).
-%
-% \begin{figure}
-% \begin{center}
-% \includegraphics[width=120mm]{periodicalForce.png}
-% \caption{\label{periodicalForceFig} Periodical contraction force used. $T$ -- period, $F_{min}$ -- minimal force magnitude, $F_{max}$ -- minimal force magnitude. }
-% \end{center}
-% \end{figure}
-%
-% \begin{figure}
-% \begin{center}
-% \includegraphics[width=120mm]{perdiodicalDelay.png}
-% \caption[Periodical contraction force with delay]{\label{periodicalDelayFig} Periodical contraction force with delay presented in \citep{Moreau}.}
-% \end{center}
-% \end{figure}
-
-\subsubsection{Friction}
-
-\begin{figure}
-  \centering
-    \includegraphics[width=60mm]{sections/methodology/images/basic/friction.png}
-\caption[Simple rigid body friction problem.]{\label{frictionFig} Simple rigid body friction problem: \emph{F} – friction force, \emph{N} – normal contact force, \emph{mg} - gravitational force, \emph{v} - velocity, $\theta$ - angle between the surface and horizontal plane \citep{RIGIDBODY}}
-\end{figure}
-
-
-
-One of the most often used models for calculating friction between two rigid bodies in contact is Coulomb's law of friction \citep{coulomb00}. As illustrated on the Figure \ref{frictionFig}, the law states that the friction force is defined by the normal contact force \emph{N} times the coefficient of friction ( $\mu$ ). In case of a sliding contact, the friction force is exactly equal to $\mu$\emph{N} by magnitude. The direction is defined to be opposite to the tangential component of the acting force.
-
-The physical model to be used in the childbirth simulation will replace the gravitational force with the uterine contraction force. However, there is a need to specify a suitable friction coefficient for the head-pelvis contact. During the literature review no resources were found where the exact coefficients for this particular case are specified. The work by \citet{boneFrictionCoefficient} performed series of experiments and identified friction coefficients between a muscle and a bone. These values vary under different loads between $0.29$ and $0.36$. Considering that it is not the bare bones interacting, the friction coefficients of lubricated skin were examined. The works by \citet{skinFrictionInVivo} and \citet{realTimeSkinFriction} provide the coefficients, but the values vary widely according to the normal loads and the used lubricants. As it is difficult to choose a single value an average of $0.35$ was chosen as the starting option. The value can be changed during further experiments.
-
-
-\subsubsection{Rotational moments}
-In order to calculate rotational moments caused by collisions it is necessary first to identify a rotational pivot. For the rotational pivot of the fetal head the atlanto-occipital point (Fig \ref{atalantoOccipital}) will be chosen. The rotational moment \emph{M} is found by calculating the cross product of the contact force $F_c$ vector and vector (\emph{d}), being the position vector from the rotational point to the point of contact. Equation \ref{calculateInitMoment} shows the relation:
-
-\begin{equation} \label{calculateInitMoment} \vec{M}=\vec{F_c}\times \vec{d} \end{equation}
-
-
-However, the contact force $F_c$ needs to be calculated first. The force is the resulting force acting on the fetal head during contact. It comprises of the normal, tangential and frictional components.
-
-The normal component is trivial to find by projecting the inverted external force onto the contact normal as in equation \ref{projectNormal}.
-
-\begin{equation}
-\label{projectNormal}
-\vec{F}_n = (\vec{F} \cdot \vec{n})\widehat{n}
-\end{equation}
-
-The tangential component $F_{\tau}$ of the reaction force is more ambiguous to find. It is known that the normal component is collinear with the normal and the tangential component will be inside the tangent plane as in Figure \ref{tangentFig}, but the plane contains potentially an infinite number of such vectors. However, considering the intersection of the tangent plane with the plane formed by the normal and the force \emph{F} it is possible to find the tangent vector. Thus, the direction of the tangential component is calculated from the contact normal and the external force \emph{F} using equations \ref{projectNormal},  \ref{findingTangent1} and \ref{findingTangent2}.
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=65mm]{sections/methodology/images/basic/tangentspace.png}
-\caption[Tangent plane of a contact]{\label{tangentFig} Tangent plane of a contact \citep{Pal2001}}
-\end{center}
-\end{figure}
-
-\begin{equation}
-\label{findingTangent1}
-\vec{R}=-\vec{F} ~~ \wedge   ~~\vec{F_{\tau}}=\vec{F}-\vec{F_{n}}
-\end{equation}
-
-\begin{equation}
-\label{findingTangent2}
-\vec{F_{\tau}}=\vec{F}-(\vec{F} \cdot \vec{n})\vec n
-\end{equation}
-
-Thus, after identifying all the necessary forces for the contact the resulting contact force $F_c$ is defined as in equation \ref{findingFc}. Equation \ref {calculateInitMoment} can be worked out now. The rotation of the object is then calculated based on the combined rotational moments as seen in equation \ref{combineMoments}. It should be noted that each of the moments are calculated for each contact point separately.
-
-\begin{equation}
-\label{findingFc}
-F_c = F_{\tau} - F_{fr}
-\end{equation}
-
-\begin{equation}
-\label{combineMoments}
-M_{comb}=\sum_{i}^{n}M_{i}
-\end{equation}
 
 \subsection{IveTrainer childbirth simulation software}
 
@@ -257,5 +167,21 @@ Using the simplified full fetal body model did not improve the simulation result
 The table \ref{hybrid-table} summarizes the described experimental resuts.
 
 % !!! TABLE
+
+\begin{table}[h]
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\multirow{2}{*}{Cardinal movement} & \multicolumn{4}{l|}{Waypoints} \\ \cline{2-5}
+                                   & 0      & 1     & 2     & 3     \\ \hline
+Descent                            & +      & +     & +     & +     \\ \hline
+Engagement                         & +      & +     & +     & +     \\ \hline
+Flexion                            & +      & +     & +     & +     \\ \hline
+Internal rotation                  & ?      & +     & +     & +     \\ \hline
+Extension                          &        &       & +     & +     \\ \hline
+External rotation                  &        &       &       & +     \\ \hline
+Expulsion                          &        &       & +     & +     \\ \hline
+\end{tabular}
+\caption{Initial exerimental results} \label{hybrid-table}
+\end{table}
 
 This simplified forwards-engineered childbirth simulation system is incomplete and requires further development and refinement. This was indeed anticipated as  developing a medical simulation software with full functionality can take several years. The resulting system can be seen as an initial step towards a fully functional system for childbirth simulation and obstetrician training. The following sections describe the steps taken in order to improve upon the described simulation system.
