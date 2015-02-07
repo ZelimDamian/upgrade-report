@@ -1,26 +1,17 @@
 \section{Existing childbirth simulation systems}\label{lit-existing}
 
-\subsection{Mechanical contact problem}
-The earlier work in the area of computer based childbirth simulations is done by \textbf{\citet{GEIGER}}. In his paper he investigates techniques for building meshes of models based on the Delaunay triangulation approach. The mesh is built from raw MRI data and proves to be sufficiently effective for medical purposes. After the work concerned with building the meshes he shows an attempt of implementing a childbirth simulation. The simulation is based on the compliance principle. The principle is concerned with optimizing the rotation and orientation of the colliding fetal head so that the contact forces are minimized. The contact forces, in turn, are calculated based on a \emph{surrogate} force, which is based on the depth of the penetration of the contact.
-
-\textbf{Discussion:} The author claims that the simulation represents realistic movements of the head. However, as supported by \citet{RUDYPHD}, the results seem rather unreliable in terms of fidelity. The fact that arbitrary movement and rotation is applied without proper consideration of contact forces renders the simulation unreliable. The simulation may result in an infinite loop of optimizations, so that the head will continue oscillating. Another important point is that if the `loop-hole' is not entered this approach will always render the delivery possible. This includes even severe cases of fetal head and maternal pelvis (cephalo-pelvic) disproportion.
-
-\textbf{\citet{Wischnik}} proposes another FEA based approach to the problem. He performs FEA on the whole body of the fetus and takes into consideration the soft tissues involved in the process.
-
-\textbf{Discussion:} The simulation accounts for the whole fetal body and the maternal lower-body. The author claims having a realistic model, however, the paper fails to present reliable validation of the results \citep{RUDYPHD}.
-
 \subsection{Existing physics based simulations}
 
 A number of obstetrics training simulators have been produced over the past decades. They vary in their quality and implementation. By quality we understand fidelity of the simulation presented. The implementation differs in terms of tools used: the first type includes purely software-based simulations and the second includes software simulations that are used in conjunction with real mechanical apparatus.
 
 The work by \textbf{\citet{RUDY2001}} presents a mechanical model for fetal head moulding. This phenomenon occurs during labour and is essentially fetal head deformation due to labour forces. In another work, \citet{RUDY2004} present a system developed to provide forceps delivery simulation with augmented reality (AR). They use tracking markers on the forceps to capture input and simulate accordingly. Live video is then combined with rendering of the fetal model to compose an AR simulation. In the consequent paper on the same topic they present a mechanical contact model based on FEA to calculate the effect of the contact forces between the forceps and the skull.
 
-\textbf{Discussion:} In both works they present realistic models of the fetal head and its interaction with the forceps. The use of augmented reality brings additional attractiveness to the simulation, as it has more usability in training applications. Moreover, they have managed to solve the double-contact problem, which requires more complex calculations for the FEA.
+\textbf{Discussion} In both works they present realistic models of the fetal head and its interaction with the forceps. The use of augmented reality brings additional attractiveness to the simulation, as it has more usability in training applications. Moreover, they have managed to solve the double-contact problem, which requires more complex calculations for the FEA.
 The problem with the simulation is that it fails to achieve real-time refresh rates. However, in the latter work they propose potential solutions to the problem, such as implementing simplified FEA techniques and reducing the model complexity.
 
-Another childbirth simulation using haptic feedback is performed by \textbf{\citet{KheddarImposedTraj}}. As already mentioned the system uses imposed trajectories of the fetal decent, but the interaction of the fetus with the pelvic floor is performed based on a physical model. They use a system coupled with a general purpose haptic device to allow the user to interact with the simulated process.
+Another childbirth simulation using haptic feedback is performed by \textbf{\citet{KheddarImposedTraj}}. The system uses imposed trajectories of the fetal decent, but the interaction of the fetus with the pelvic floor is performed based on a physical model. They use a system coupled with a general purpose haptic device to allow the user to interact with the simulated process.
 
-\textbf{Discussion:} The virtual hand presents an interest as a mean to provide an immersive simulation. However, the system in total is limited to simple interactions with the fetus during the descent and also calculating the forces occurring between the pelvic floor and the fetus.
+\textbf{Discussion} The virtual hand presents an interest as a mean to provide an immersive simulation. However, the system in total is limited to simple interactions with the fetus during the descent and also calculating the forces occurring between the pelvic floor and the fetus.
 %
 % \begin{figure}
 %   \centering
@@ -32,12 +23,16 @@ Many childbirth simulators \citep{Moreau}, \citep{BUTTIN}, which use a mechanica
 
 Work by \textbf{\citet{Moreau}} uses the BirthSIM system, which allows trainee obstetricians to practice forceps delivery. The software component of the system allows them to observe the process from inside representing the positioning of the forceps relative to the fetus inside the birth canal.
 
-\textbf{Discussion:} The simulation system presented in the work provides a suitable solution for forceps delivery simulation purposes. However, the work is more concerned with the labour (uterine) pressures involved in the process. Minimal attention is given to the interaction of the fetal head with the maternal organs.
+\textbf{Discussion} The simulation system presented in the work provides a suitable solution for forceps delivery simulation purposes. However, the work is more concerned with the labour (uterine) pressures involved in the process. Minimal attention is given to the interaction of the fetal head with the maternal organs.
+
+\textbf{\citet{Dupuis2009}} build upon the simulation system presented in \cite{Moreau}. The simulation system is successfully used in improving the performance of the trainee obstetricians. The main aim of the discussed paper is to track trajectories of the forceps blades applied by the trainees to identify the problematic points and help improve in educating them.
+
+\textbf{Discussion} The simulation system is as before does not consider the causes of the cardinal movements and is focused away from the topic of this research.
 
 \textbf{\citet{BUTTIN}} present more interesting work where they have managed to model fetal descent during labour without a predefined pathway. They based the model on physical properties of the main bodies in contact with the fetus and the fetus itself. They use FEA for simulating mechanics of the process and couple it with the BirthSIM system.
 
 
-\textbf{Discussion:} The model presented considers the complex interactions of several important organs, which happen to be in contact with the fetus during labour. Additionally, it presents a realistic uterine contraction force model. It is also capable of simulating the whole process of childbirth continuously and performs FEA based computations of underlying physics. This is a major advantage, which, however, introduces a set of trade-offs. The drawback is the complexity of the computations, which require the system to use simplified representations of the organs and the fetus (Fig \ref{buttinFig}). Moreover, the bony structures of the bodies are extensively simplified, such that two ellipsoid objects represent the fetal skeleton. In the paper authors do not mention that their simulation shows the cardinal movements. Therefore, it is fair to assume that their approach does not accomplish the task of simulating them.
+\textbf{Discussion} The model presented considers the complex interactions of several important organs, which happen to be in contact with the fetus during labour. Additionally, it presents a realistic uterine contraction force model. It is also capable of simulating the whole process of childbirth continuously and performs FEA based computations of underlying physics. This is a major advantage, which, however, introduces a set of trade-offs. The drawback is the complexity of the computations, which require the system to use simplified representations of the organs and the fetus. Moreover, the bony structures of the bodies are extensively simplified, such that two ellipsoid objects represent the fetal skeleton. In the paper authors do not mention that their simulation shows the cardinal movements. Therefore, it is fair to assume that their approach does not accomplish the task of simulating them.
 
 % \begin{figure}
 %   \centering
@@ -45,7 +40,36 @@ Work by \textbf{\citet{Moreau}} uses the BirthSIM system, which allows trainee o
 %   \caption{\label{buttinFig} Simplified biomechanical model from \citep{BUTTIN}}
 % \end{figure}
 
-%%%% ADD discusstion about PARENTE's work
+\textbf{\citet{Hoyte2008}} developed a simulation aimed at identifying the effects of childbirth on levator-ani muscle. Third-party FEA tools were used to perform their analysis. The simulation features a high-quality MRI based pelvic and pelvic floor models.
+
+\textbf{Discussion } The model representing the fetal head in the simulation is extremely rudimentary. A pure sphere is used to represent the head and the volume that it sweeps throughout the simulation is used as the fetal body. Additionally, the path of the sphere is superimposed.
+
+\textbf{\citet{DejunJing2013}} present a patient-specific model of the maternal pelvic floor. They also present a model of the fetal head and maternal pelvis. All models were constructed from MRI scans. Constitutative models of visco-hyperelastic materials for FEA are created from data acquire from bi-axial tests on pelvic floor tissues. Abaqus CAE was used to pre-process the FE models and perform the analysis.
+
+\textbf{Discussion} They use superimposed trajectory. A good analysis of the effects of childbirth on the perineal body is presented. The material properties used in the analysis based on actual pelvic floor tissues. They also use a comparatively accurate fetal model. This and the previous work by \citet{Hoyte2008} can serve as a good starting point in designing our simulation contents.
+
+\textbf{\citet{Lien2004}} simulate the levator-ani stretch and its effect on the pelvic floor muscles. Similarly to \citet{Hoyte2008} they use a pure sphere as the fetal head model and apply a superimposed trajectory to simulate fetal descent.
+
+\textbf{Discussion } The difference from other simulations is that the pelvic floor model is not built directly from an MRI or CT, but rather manually created by precisely recreating the underlying fine structures of the pelvic floor and the vaginal wall. This, however, does not mean that the model is accurate. The model of the pelvic floor is claimed to be extensively customizable. Certain variations corresponding to age, race, etc can be applied. The effects of these variations are then presented.
+
+\textbf{\citet{Parente2008}} used Abaqus to perform analysis on the effects of childbirth on the pelvic floor. The pelvic floor model was created from a MRI scan set, by extracting a point cloud representing the required tissues. The point cloud was then used to build a NURBS surface. The result of this is a very smooth pelvic floor model, as opposed to direct MRI extracted models which very often contain large amounts of imperfections due to bad quality of scans.
+
+\textbf{\citet{Parente2009}} reused the same models and software to study the effects of malpresentation (e.g. occiput-posterior position) of the fetal head on the pelvic floor. The resulting stretch magnitudes are compared between the correct and incorrect presentations. The malpresenting case is shown to have larger stretch values, which indicates higher risks of injury.
+
+\textbf{Discussion } Both works show interesting simulations of childbirth, but they are focused on the pelvic floor muscles and tissues.
+
+\textbf{\citet{Martins2007}} created a simulation that does consider cardinal movements. The models for the fetus and the pelvic floor are reused from \cite{Parente2009}. The main focus of the research was in identifying the effects of levator-ani muscle activation during simulated childbirth. Abaqus program is used to perform the analysis.
+
+\textbf{Discussion} The cardinal movements are reverse engineered by imposing rotations on the simulated fetal head. They study the results of cardinal movements on the pelvic floor soft tissues and muscles, rather than the opposite The reverse effects are not considered. It does, however, indicate that the pelvic floor
+
+\subsection{Mechanical contact problem}
+The earlier work in the area of computer based childbirth simulations is done by \textbf{\citet{GEIGER}}. In his paper he investigates techniques for building meshes of models based on the Delaunay triangulation approach. The mesh is built from raw MRI data and proves to be sufficiently effective for medical purposes. After the work concerned with building the meshes he shows an attempt of implementing a childbirth simulation. The simulation is based on the compliance principle. The principle is concerned with optimizing the rotation and orientation of the colliding fetal head so that the contact forces are minimized. The contact forces, in turn, are calculated based on a \textit{surrogate} force, which is based on the depth of the penetration of the contact.
+
+\textbf{Discussion} The author claims that the simulation represents realistic movements of the head. However, as supported by \citet{RUDYPHD}, the results seem rather unreliable in terms of fidelity. The fact that arbitrary movement and rotation is applied without proper consideration of contact forces renders the simulation unreliable. The simulation may result in an infinite loop of optimizations, so that the head will continue oscillating. Another important point is that if the `loop-hole' is not entered this approach will always render the delivery possible. This includes even severe cases of fetal head and maternal pelvis (cephalo-pelvic) disproportion.
+
+\textbf{\citet{Wischnik}} proposes another FEA based approach to the problem. The contact between the fetal body and the maternal organs is considered. The author performs FEA on the whole body of the fetus and takes into consideration the soft tissues involved in the process.
+
+\textbf{Discussion} The simulation accounts for the whole fetal body and the maternal lower-body. The author claims having a realistic model, however, the paper fails to present reliable validation of the results.
 
 \section{Conclusion}
 

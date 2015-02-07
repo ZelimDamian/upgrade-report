@@ -6,19 +6,35 @@ The main target of this research is establishing all seven cardinal movements of
 
 Unfortunately we do not possess any quantitative data on the trajectory of fetal descent that can be used to meaningfully compare with the observed trajectory during our simulation.
 
-\subsection{Bony structures with a basic pelvic floor model}
-A scenario where the fetal skull is descending through the maternal pelvis with a simple pelvic floor model attached. This scenario is a potential starting point for simulation experiments. This experiment will be directed at validating the simulation system. The work presented in \cite{parente2014} represents a very simillar scenario, although more simplified. We beleive that having a realistic skull model will improve fidelity of the observed experimental values.
+\subsubsection{Bony structures with a basic pelvic floor model}
+A scenario where the fetal skull is descending through the maternal pelvis with a simple pelvic floor model attached. This scenario is a potential starting point for simulation experiments. This experiment will be directed at validating the simulation system. The work presented in \cite{Parente2009} represents a very similar scenario, although more simplified. We believe that having a realistic skull model will improve fidelity of the observed experimental values.
+
+\section{Effects of muscle activation}
+
+Work by \citet{Martins2007} bring to attention effects of simulating the contracting muscles while performing the rest of the simulation. It may be of interest to look into how active pelvic floor and uterine muscles affect the propagation of the fetal head through the birth canal.
 
 \section{Volumetric mesh generation}\label{future-meshgen}
 
-Mesh generation is designated as one of the higher priorty tasks to accomplish. Having acquired or generated high quality tetrahedral or hexahedral meshes is a crucial requirement in being able to perform the research experiments.
+Mesh generation is designated as one of the higher priority tasks to accomplish. Having acquired or generated high quality tetrahedral or hexahedral meshes is a crucial requirement in being able to perform the research experiments.
 
 \section{Improved contact model}\label{future-meshgen}
 
-Mesh generation is designated as one of the higher priorty tasks to accomplish. Having acquired or generated high quality tetrahedral or hexahedral meshes is a crucial requirement in being able to perform the research experiments.
+Mesh generation is designated as one of the higher priority tasks to accomplish. Having acquired or generated high quality tetrahedral or hexahedral meshes is a crucial requirement in being able to perform the research experiments.
 
-\subsection{GPU based TLED optimizations}
+\subsection{GPU based TLED improvements}
 
 \subsubsection{Parallelize deformation updating}
 
+Currently only the internal force calculation part of the algorithm is performed in parallel. As described in in section \ref{gpu-adapting-tled}, the two parts of the algorithm cannot be run continuously in parallel. A separate kernel and its invocation is required.
+
+\subsubsection{Hour-glass artifact compensation}
+
+
+
 \subsubsection{OpenGL and OpenCL shared context}
+
+\subsection{More validation and benchmarking}
+
+The accuracy of the proposed implementation needs to be thoroughly analyzed. For that purpose, a similar experimental setups will be created to other implementations and same experiments will be performed. This allows greater accuracy in the results of validation.
+
+Additionally, we need to establish the exact difference in performance. It also important to identify the bottle-necks and slowest points in our implementation of the algorithm.

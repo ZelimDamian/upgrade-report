@@ -6,30 +6,30 @@
 
   There are different levels of complexity at which a physics model can be formulated. The same physical concept can be represented with a higher or lower degree of simplified approximation.
 
-  Physics based simulations find a great number of applications in various areas. Not all such areas require highest fidelity models. Games and entertainment industry is an exmaple of areas where a simplified model yeilds sufficiently accurate results with a relatively cheap cost of the computation required.
+  Physics based simulations find a great number of applications in various areas. Not all such areas require highest fidelity models. Games and entertainment industry is an example of areas where a simplified model yields sufficiently accurate results with a relatively cheap cost of the computation required.
 
   \subsubsection{Simplifying assumptions}
 
-  The intial attempts on creating a forwards-engineered simulation of human childbirth were focused on using simplied physics model. Due to the requirement on having a childbirth simulation working as soon as possible, a list of simplifying assumtions was adopted.
+  The initial attempts on creating a forwards-engineered simulation of human childbirth were focused on using simplified physics model. Due to the requirement on having a childbirth simulation working as soon as possible, a list of simplifying assumptions was adopted.
 
-  The list included the following assumtions:
+  The list included the following assumptions:
 
   \begin{enumerate}
 
     \item The soft tissues of the maternal reproductive system do not need to be considered to observe cardinal movements
     \item The trunk of the fetal body does not need to be considered to observe cardinal movements.
-    \item The labour forces can be replaced by a simple periodical force acting on the atlanto-occipital point (Figure \ref{ao-point}) of the fetal skull to observe cardinal movements.
+    \item The labour forces can be replaced by a simple periodical force acting on the atlanto-occipital point (Figure \ref{basic-ao-point}) of the fetal skull to observe cardinal movements.
 
   \end{enumerate}
 
   \begin{figure}
   \begin{center}
   \includegraphics[width=40mm]{sections/methodology/images/basic/ao-point.png}
-  \caption[The atlanto-occipital point.]{\label{contact} The atlanto-occipital point.}
+  \caption[The atlanto-occipital point.]{\label{basic-ao-point} The atlanto-occipital point.}
   \end{center}
   \end{figure}
 
-  The assumtions allowed for a simpler set of requirements for the software implementation aspect of the project and arriving at a working prototype soon.
+  The assumptions allowed for a simpler set of requirements for the software implementation aspect of the project and arriving at a working prototype soon.
 
 
 \subsection{IveTrainer childbirth simulation software}
@@ -38,7 +38,7 @@
 
 The IveTrainer software was the first attempt on implementing a forward-engineered childbirth simulation. It was limited to the simplified physics model described above.
 
-The resulting software is a simulation tool capable of performing several different simulations. The set of simulations can be extended easily because of the software design pattern utilisation. The simulations can be run in the fully forward engineered mode or using imposed trajectories and fetal postures in a reverse engineered way. It provides several input modalities, namely: keyboard, mouse and haptic device.
+The resulting software is a simulation tool capable of performing several different simulations. The set of simulations can be extended easily because of the software design pattern utilization. The simulations can be run in the fully forward engineered mode or using imposed trajectories and fetal postures in a reverse engineered way. It provides several input modalities, namely: keyboard, mouse and haptic device.
 
 The use of reverse engineering was justified as the chosen forward engineering approach failed to give sufficiently accurate results. However, as mentioned in the Literature Review \ref{lit-existing}, many of contemporary simulation systems use reverse engineering. Additionally, the two forward and reverse engineered approaches were combined, resulting in a hybrid simulation partially dictated by a predefined trajectory and partially by the underlying physics simulation. Figure \ref{hybridFig} shows the difference between the fully reverse-engineered and the hybrid approach.
 
@@ -52,19 +52,19 @@ Currently, each simulation consists of three objects and a simulation procedure 
 
 \subsubsection{Features}
 
-The set of features is currently comprised of means for child delivery simulation for predicting potential outcomes and delivery process visualisation for training purposes. The main features of the system in more detail are provided below.
+The set of features is currently comprised of means for child delivery simulation for predicting potential outcomes and delivery process visualization for training purposes. The main features of the system in more detail are provided below.
 
 \paragraph{Object Manipulation}
 Object manipulation is a basic, but crucial feature of the system. Considering that the system is meant to be used by medical personal, a user-friendly interface for object manipulation was provided. Thus, the system is incorporated with the means of easy control over the objects' position and orientation using a mouse. This is achieved by implementing an \emph{arcball} input system and a set of keyboard shortcuts.
 
 \paragraph{Cardinal Movements of Fetal Head}
-The first simulation is dedicated to the simulation of cardinal movements of the fetal head only. Provided additional improvement of the underlying physical model and refinement of the set of considered influences, this mode can be used to analyse and investigate the childbirth process and eventually predict the most-likely outcome of a given vaginal delivery.
+The first simulation is dedicated to the simulation of cardinal movements of the fetal head only. Provided additional improvement of the underlying physical model and refinement of the set of considered influences, this mode can be used to analyze and investigate the childbirth process and eventually predict the most-likely outcome of a given vaginal delivery.
 
 
-\paragraph{Customisable Models}
+\paragraph{Customizable Models}
 One of the most important features here is that the system provides a customizable environment. Namely, the main pelvimetric diameters and the diameters of the fetal head can be specified with sub-millimetric accuracy. This may have limited use in predicting real case outcomes, however, it can be used for the purposes of investigation of different child delivery processes.
 
-The coronal, transverse and sagittal extents of the fetal head can be specified, to simulate and analyse how the given diameters affect the outcome of a given delivery. The set of customizable extents for the pelvis consists of the main obstetric diameters, namely: inlet transverse, inlet oblique, inlet anteroposterior, outlet transverse, outlet oblique, outlet anteroposterior and middle anteroposterior diameters. The illustration of all the described diameters will be given in the following sections.
+The coronal, transverse and sagittal extents of the fetal head can be specified, to simulate and analyze how the given diameters affect the outcome of a given delivery. The set of customizable extents for the pelvis consists of the main obstetric diameters, namely: inlet transverse, inlet oblique, inlet anteroposterior, outlet transverse, outlet oblique, outlet anteroposterior and middle anteroposterior diameters. The illustration of all the described diameters will be given in the following sections.
 
 \paragraph{Periodically changing expulsion force}
 The control over expulsion force magnitudes and their temporal change is inspired by the work by \citet{Moreau}. The authors of this work indicated that the periodical nature of the forces cause the head to progress backwards through the birth canal as well forwards as it generally does. They suggested the potential importance of this phenomenon as an additional factor contributing to a successful delivery.
@@ -84,14 +84,14 @@ The system allows convenient management of the trajectories by providing means t
 \paragraph{Hybrid Simulation}
 A compromise solution for the forward-backward engineered simulation was achieved. This implies that the simulation will proceed in the forward engineered mode, unless the simulated fetus deviates from the specified trajectory in terms of position and orientation. This allows current position and orientation to be optimized. Thus, using this approach the system can avoid cases when simulation leads to unrealistic outcomes.
 
-\paragraph{Shoulder Dystocia Visualisation}
-The second simulation is purely demonstrative visualisation of a shoulder dystocia case discussed in section \ref{dystociaSec}. It shows how the case occurs starting from the initial stages of labour till the state when the shoulder is pressed against the \emph{symphysis pubis}. The limitation of it is that the body of the baby is completely rigid.
+\paragraph{Shoulder Dystocia Visualization}
+It shows how the case occurs starting from the initial stages of labour till the state when the shoulder is pressed against the \emph{symphysis pubis}. The limitation of it is that the body of the baby is completely rigid.
 
 \paragraph{Face Presentation}
 One of the predefined trajectories demonstrates face presentation delivery. As expected the head will pass through the pelvis fully extended, but will be arrested near the outlet.
 
 \paragraph{Manipulating Articulated Fetus}
-The third simulation is a result of further development of the shoulder dystocia visualisation described above. The main improvement here is that the simulation has become more interactive rather than purely demonstrative. This is due to the development of an articulated fetus that the user can interact by using a haptic device. This feature required implementing haptic input management and inverse kinematics. The user is able to use a haptic device to select the head, a hand or a foot of the fetus and move it as required. A set of constraints can be enabled to modulate the IK result. The set can be customised for each joint.
+The third simulation is a result of further development of the shoulder dystocia visualization described above. The main improvement here is that the simulation has become more interactive rather than purely demonstrative. This is due to the development of an articulated fetus that the user can interact by using a haptic device. This feature required implementing haptic input management and inverse kinematics. The user is able to use a haptic device to select the head, a hand or a foot of the fetus and move it as required. A set of constraints can be enabled to modulate the IK result. The set can be customized for each joint.
 
 \subsection{Simulation pipeline}
 
@@ -105,7 +105,7 @@ The simulation system adopts a typical update loop architecture. The diagram in 
 
 \begin{enumerate}
 
-  \item The first step includes all the required initialization and pre-processing. This step is only performed once. It should be mentioned that during this stage the spring object is instantiated and is assigned with two attachments. The attachments are represented by the attached dynamic objects’ references.
+  \item The first step includes all the required initialization and pre-processing. This step is only performed once. It should be mentioned that during this stage the spring object is instantiated and is assigned with two attachments. The attachments are represented by the attached dynamic objects�  references.
 
   \item Step two involves complex processing of the geometries and collision detection. This step consists of a loop going through all the simulation objects and pairwise collision detection. The calculated contact information is used to compute the resulting contact force for each contact.
 
@@ -158,17 +158,18 @@ Figure \ref{mass-spring-detail} demonstrates in detail how the forces are calcul
 
 \subsubsection{Results and Conclusions}
 
-The results of the expermients performed using the described simulation system are described in the published paper \cite{gerikhanov2013}, which is also included in the appendix \ref{appendix}.
+The results of the experiments performed using the described simulation system are described in the published paper \cite{gerikhanov2013}.
 
-The simulation system was successful on displaying the first three cardinal movemenets. The Engagement, Descent and Flexion were observed in all experiments. As reported by the paper, the Internal Rotation was observed occasionally in cases when the flexion was manually imposed onto the fetal head. When using the hybrid approach, the simulation demonstrated all of the cardinal movements in cases when the number of way-points was sufficient to impose the required trajectory.
+The simulation system was successful on displaying the first three cardinal movements. The Engagement, Descent and Flexion were observed in all experiments. As reported by the paper, the Internal Rotation was observed occasionally in cases when the flexion was manually imposed onto the fetal head. When using the hybrid approach, the simulation demonstrated all of the cardinal movements in cases when the number of way-points was sufficient to impose the required trajectory.
 
 Using the simplified full fetal body model did not improve the simulation results. No additional cardinal movements were observed when using the simplified model, but the originally displayed movements were slightly emphasized.
 
-The table \ref{hybrid-table} summarizes the described experimental resuts.
+The table \ref{hybrid-table} summarizes the described experimental results.
 
 % !!! TABLE
 
 \begin{table}[h]
+\centering
 \begin{tabular}{|l|l|l|l|l|}
 \hline
 \multirow{2}{*}{Cardinal movement} & \multicolumn{4}{l|}{Waypoints} \\ \cline{2-5}
@@ -181,7 +182,7 @@ Extension                          &        &       & +     & +     \\ \hline
 External rotation                  &        &       &       & +     \\ \hline
 Expulsion                          &        &       & +     & +     \\ \hline
 \end{tabular}
-\caption{Initial exerimental results} \label{hybrid-table}
+\caption{Initial experimental results} \label{hybrid-table}
 \end{table}
 
 This simplified forwards-engineered childbirth simulation system is incomplete and requires further development and refinement. This was indeed anticipated as  developing a medical simulation software with full functionality can take several years. The resulting system can be seen as an initial step towards a fully functional system for childbirth simulation and obstetrician training. The following sections describe the steps taken in order to improve upon the described simulation system.
